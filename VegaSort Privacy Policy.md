@@ -6,4 +6,4 @@ To organize all file types it needs All Files Access - used __only__ for local f
 
 Sincerely,\
 Vega Manas Team\
-Vega Manas Labs\
+Vega Manas Labs
