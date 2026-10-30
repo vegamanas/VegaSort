@@ -1,2 +1,0 @@
-# VegaSort
-VegaSort App
