@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VegaSort — Terms of Use</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #0A0B0D; color: #E8E8E8;
+    font: 16px/1.65 "Segoe UI", Roboto, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: #111318; border-bottom: 1px solid #3A3A3A;
+    padding: 40px 20px 28px; text-align: center;
+  }
+  h1 {
+    font-size: 34px; font-weight: 800; letter-spacing: .5px; margin: 0 0 6px;
+  }
+  header p { color: #AAAAAA; margin: 2px 0; font-size: 14px; }
+  main {
+    max-width: 840px; margin: 0 auto; padding: 28px 20px 64px;
+  }
+  h2 {
+    font-size: 22px; font-weight: 700; margin: 36px 0 12px;
+    border-bottom: 1px solid #2A2D33; padding-bottom: 8px;
+  }
+  ul { padding-left: 22px; }
+  li { margin: 8px 0; }
+  code {
+    background: #1A1D23; border: 1px solid #2A2D33; border-radius: 5px;
+    padding: 1px 5px; font-size: 13.5px; color: #B8C6F0; word-break: break-all;
+  }
+  a { color: #4F8EF7; }
+  footer { text-align: center; color: #666; font-size: 13px; padding: 24px 0 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>VegaSort</h1>
+  <p>Terms of Use</p>
+  <p>Effective 2026-10-29</p>
+</header>
+
+<main>
+  <p><strong>Provider:</strong> Vega Manas Labs · <strong>Contact:</strong>
+    <a href="mailto:vegamanaslabs@gmail.com">vegamanaslabs@gmail.com</a> ·
+    <strong>Listing:</strong>
+    <a href="https://play.google.com/store/apps/details?id=com.vegasort.app">Google Play</a></p>
+
+  <h2>1. What VegaSort does</h2>
+  <p>VegaSort is an on-device Android file-manager that helps you triage new files (photos, videos, screenshots, downloads, WhatsApp/Telegram media) via a floating bubble or notifications, bulk-sort existing files via Sorting Wizard, and optionally auto-move future files via AutoSort rules. Link shares can be triaged to categories. Folders and history browse locally from the on-device database.</p>
+  <p>Files are organized <strong>locally on your device only</strong>. The app does not upload your files (see the <a href="index.html">Privacy Policy</a>).</p>
+
+  <h2>2. Permissions you grant (why each exists)</h2>
+  <ul>
+    <li><strong>All Files Access (<code>MANAGE_EXTERNAL_STORAGE</code>) — required.</strong> Core file-manager function: bulk triage across Camera, Screenshots, Download, WhatsApp/Telegram media and SD/USB destinations, which per-folder pickers cannot do. Without it sorting cannot run; the first screen blocks entry until granted.</li>
+    <li><strong>Display over other apps (<code>SYSTEM_ALERT_WINDOW</code>) — required at onboarding for Bubble (default).</strong> Shows the floating bubble, expanded sorting panel, and links panel. After onboarding you can switch to Notification mode in Live → Interaction Mode; the bubble is unavailable in that mode by design.</li>
+    <li><strong>Notifications (<code>POST_NOTIFICATIONS</code>, Android 13+) — recommended.</strong> Keeps the foreground-service notice visible and delivers per-file, grouped, AutoSort, bulk and trash notices. If denied, those surfaces are silent but your files stay intact; you can grant later in the Permissions screen.</li>
+    <li><strong>Skip Battery Optimization (<code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code>) — recommended, never required.</strong> Reduces the chance Samsung/Xiaomi/Oppo/Vivo kill the background service. The app works without it but may miss detections on aggressive OEM skins.</li>
+  </ul>
+  <p>OS-level grants (delete/trash consent, storage volume mount/eject) are requested in context, one dialog per batch.</p>
+
+  <h2>3. Your responsibilities</h2>
+  <ul>
+    <li><strong>Back up important files.</strong> Sorting moves (or copies, if you turn off <code>Move original file</code>) and System-Trash actions are performed on your instruction or your AutoSort rules. Verify destinations in the Folders tab before enabling silent rules.</li>
+    <li><strong>Move vs Copy:</strong> <code>Move original file</code> defaults ON (original deleted after verified copy). Turn it OFF to keep originals; Wizard and AutoSort copy warnings apply.</li>
+    <li><strong>System Trash:</strong> AutoSort trash rules use Android's <code>MediaStore.createTrashRequest</code> (media files only — silent first, system dialog fallback per burst). Trashed items stay listed in History → Filed with a Recover button; unclaimed items age out with the standard 7-day History prune. AutoSort permanent-delete rules and panel Delete run a batched <code>createDeleteRequest</code> and cannot be undone.</li>
+    <li><strong>Removable volumes:</strong> ejecting SD/USB marks folders unavailable until re-mounted or re-picked. Do not remove media mid-move.</li>
+    <li><strong>Lawful content:</strong> only sort content you own or may manage. Do not use VegaSort to infringe copyright or handle unlawful material.</li>
+    <li><strong>No refreshing of revoked grants by us:</strong> if you or the OS revokes All-Files/Overlay/Notifications, affected features pause or fall back (Live → notifications; bubble hidden) until you re-grant in system Settings via Dashboard → Permissions.</li>
+  </ul>
+
+  <h2>4. Service behavior &amp; limits</h2>
+  <ul>
+    <li>Stopping VegaSort Service pauses Live detection and Instant AutoSort; Daily AutoSort drains, Folders/History/Links-screen browsing, and notification Move/Dismiss actions keep working; Wizard/share restarts the service.</li>
+    <li>Detection is best-effort across OEMs 12–17; Doze, battery-saver, and manufacturer task killers may delay background work. The 15-min reconcile watermark and tracked re-check bound lateness but do not guarantee instant delivery.</li>
+    <li>Retention: pending items prune after 24h, filed/unfiled history after 7 days. Export links you want to keep via the Links screen TSV backup.</li>
+    <li>Ads: Google AdMob banner; consent via the EU popup (UMP) and <code>Ad privacy choices</code> in the Privacy &amp; Terms dialog (onboarding + Settings); the choices row appears only where Google requires it.</li>
+  </ul>
+
+  <h2>5. Acceptable use</h2>
+  <p>Do not (a) reverse-engineer store-delivered binaries to evade policy, (b) use overlays to mimic other apps or capture credentials, (c) automate sorting of others' devices without consent, (d) upload or share others' private files via the share entry. Overlays respect <code>FLAG_SECURE</code> and must not be used deceptively (Play Device/Network Abuse + Deceptive Behavior policies).</p>
+
+  <h2>6. Warranty, liability, changes</h2>
+  <p>Provided "AS IS" without warranty to the maximum extent permitted by law. To the extent permitted, Vega Manas Labs is not liable for indirect loss (including file loss where no backup exists). Either party may stop using the app at any time by uninstalling; stopping the service pauses detection (see §4). We may update these terms with an in-app notice; material permission changes will re-prompt in context, never silently.</p>
+
+  <h2>7. Governing law &amp; disputes</h2>
+  <p>These Terms are governed by the laws of <strong>Germany</strong>, without regard to conflict-of-law rules. The courts of <strong>Germany</strong> have non-exclusive jurisdiction over any dispute arising out of or related to the app or these Terms. Mandatory consumer-protection rights in your country of residence remain unaffected.</p>
+  <p>Contact: <a href="mailto:vegamanaslabs@gmail.com">vegamanaslabs@gmail.com</a>.</p>
+</main>
+<footer>VegaSort · Vega Manas Labs · effective 2026-10-29 · <a href="index.html">Privacy Policy</a></footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VegaSort — Privacy Policy</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #0A0B0D; color: #E8E8E8;
+    font: 16px/1.65 "Segoe UI", Roboto, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: #111318; border-bottom: 1px solid #3A3A3A;
+    padding: 40px 20px 28px; text-align: center;
+  }
+  h1 {
+    font-size: 34px; font-weight: 800; letter-spacing: .5px; margin: 0 0 6px;
+  }
+  header p { color: #AAAAAA; margin: 2px 0; font-size: 14px; }
+  main {
+    max-width: 840px; margin: 0 auto; padding: 28px 20px 64px;
+  }
+  h2 {
+    font-size: 22px; font-weight: 700; margin: 36px 0 12px;
+    border-bottom: 1px solid #2A2D33; padding-bottom: 8px;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  th, td { border: 1px solid #2A2D33; padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: #15171C; color: #FFFFFF; font-weight: 700; }
+  tr:nth-child(even) td { background: #0F1116; }
+  ul { padding-left: 22px; }
+  li { margin: 8px 0; }
+  code {
+    background: #1A1D23; border: 1px solid #2A2D33; border-radius: 5px;
+    padding: 1px 5px; font-size: 13.5px; color: #B8C6F0; word-break: break-all;
+  }
+  a { color: #4F8EF7; }
+  footer { text-align: center; color: #666; font-size: 13px; padding: 24px 0 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>VegaSort</h1>
+  <p>Privacy Policy</p>
+  <p>Effective 2026-10-29</p>
+</header>
+
+<main>
+  <h2>1. Summary</h2>
+  <ul>
+    <li>Your files <strong>never leave your device</strong> for sorting. Detection, moves, history, links, and rules all run locally.</li>
+    <li>The only network use is <strong>ads</strong>: Google AdMob may collect and share your IP address (which may be used to estimate general location), app interactions, diagnostic/performance information, and device/account identifiers such as the Advertising ID and app set ID. This is used for advertising, analytics, and fraud prevention. EU/UK/CH users see a UMP consent popup first; where Google requires it, the in-app <em>Privacy &amp; Terms</em> dialog shows <em>Ad privacy choices</em> so you can change your choice anytime.</li>
+    <li>No account and no separate analytics or crash-reporting SDK. The AdMob SDK described above is the only third-party network SDK.</li>
+  </ul>
+
+  <h2>2. Controller</h2>
+  <p>Developer / controller: <strong>Vega Manas Labs</strong> (Germany) ·
+     Play Store listing: <a href="https://play.google.com/store/apps/details?id=com.vegasort.app">Play listing</a> ·
+     Contact: <a href="mailto:vegamanaslabs@gmail.com">vegamanaslabs@gmail.com</a></p>
+
+  <h2>3. Data we access — and why</h2>
+  <table>
+    <tr><th>Access</th><th>Why</th><th>Where it stays</th></tr>
+    <tr><td>All Files Access (<code>MANAGE_EXTERNAL_STORAGE</code>)</td><td>Core file-manager triage across Camera / Screenshots / Download / WhatsApp / Telegram and SD/USB volumes; per-folder grants cannot do bulk triage.</td><td>Local only. File bytes are read/copied between your own storage volumes; never uploaded.</td></tr>
+    <tr><td>Display over other apps (<code>SYSTEM_ALERT_WINDOW</code>)</td><td>Floating bubble, expanded sorting panel, links panel. Required for the bubble; a notification-only mode exists without it.</td><td>Local window state (position/opacity preferences).</td></tr>
+    <tr><td>Foreground service (<code>FOREGROUND_SERVICE*</code>, <code>dataSync|specialUse</code>)</td><td>Keeps detection/organizing alive while the app works in the background; subtype and purpose are declared in the app manifest.</td><td>Runs entirely on-device; no data leaves.</td></tr>
+    <tr><td>Notifications (<code>POST_NOTIFICATIONS</code>, Android 13+)</td><td>Foreground-service notice, per-file and grouped sorting notices, AutoSort/bulk/trash notices.</td><td>Local notification state only.</td></tr>
+    <tr><td>Auto-restart after reboot (<code>RECEIVE_BOOT_COMPLETED</code>) — off by default</td><td>Re-starts the sorting service after reboot only if you enable it in settings.</td><td>Local preference only.</td></tr>
+    <tr><td>Vibration (<code>VIBRATE</code>)</td><td>Short haptic feedback on bubble interactions (opt-out in settings).</td><td>Nothing stored.</td></tr>
+    <tr><td>Skip Battery Optimization — opt-in</td><td>Reduces aggressive OEM task-kill interference with detection workers.</td><td>Local system exemption flag.</td></tr>
+    <tr><td>Storage volume state</td><td>Marks SD/USB folders available/unavailable when media is mounted or ejected.</td><td>Local folder availability flags.</td></tr>
+    <tr><td>Share intents you send the app</td><td>Files/links you explicitly share are staged in a private cache while the temporary grant is valid, then indexed into the on-device inbox.</td><td>Private app cache (age-ordered 500&nbsp;MB ceiling) and on-device Room rows. Never sent off-device.</td></tr>
+    <tr><td>In-app library</td><td>Your destination folders, 7-day filing history, saved links/categories, AutoSort rules, misc preferences.</td><td>On-device Room database + preferences, backed up only via your own Android system backup (DB + prefs only).</td></tr>
+    <tr><td>Delete/trash consent results</td><td>System delete/trash consent flows reconciled after OS dialogs.</td><td>Local status fields.</td></tr>
+  </table>
+  <p>The app does <strong>not</strong> request or access contacts, device location, microphone, camera recording, SMS, or a broad package inventory (a curated, Play-compliant <code>&lt;queries&gt;</code> list only). AdMob may estimate general location from your IP address as described in §5.</p>
+
+  <h2>4. Retention</h2>
+  <ul>
+    <li>Pending (unsorted) items: pruned after 24 hours.</li>
+    <li>Filed/unfiled history: pruned after 7 days.</li>
+    <li>Share-relay cache: age-ordered sweep to 500&nbsp;MB.</li>
+    <li>Uninstalling removes all app-private data. If you enable Android system backup, the on-device database and preferences are included in that backup; such backup content is stored by Google's backup infrastructure.</li>
+  </ul>
+
+  <h2>5. Sharing &amp; third parties</h2>
+  <ul>
+    <li><strong>No sale of personal data.</strong> Files, history, rules and links are never shared.</li>
+    <li><strong>Google AdMob</strong> may collect and share your device's IP address (which may be used to estimate general location), app interactions (app launch, taps, video views), diagnostic/performance information (launch time, hang rate, energy usage), and device/account identifiers (Advertising ID, app set ID) for advertising, analytics, and fraud prevention. Data is encrypted in transit with TLS. Where Google requires it, personalization can be revoked any time via the in-app <em>Privacy &amp; Terms</em> → <em>Ad privacy choices</em> entry or the OS ad settings; you can also delete/reset your advertising ID in Android Settings → Privacy → Ads at any time.</li>
+    <li>No other networked SDK is bundled for sorting; there is no server.</li>
+  </ul>
+
+  <h2>6. Data safety</h2>
+  <p>The app's Play Data safety declaration covers the AdMob SDK data described above: approximate location, app interactions, diagnostics, and device or other IDs — collected and shared with Google for advertising/marketing, analytics, and fraud prevention; encrypted in transit; deletion requests via the contact below or the Android ad-ID controls. The app itself does not register accounts and does not transmit your files or history anywhere.</p>
+
+  <h2>7. Your rights &amp; choices</h2>
+  <ul>
+    <li>Grant / deny / revoke any permission any time in the app's Permissions screen or the Android settings.</li>
+    <li>Switch to notification mode after onboarding in Live → Interaction Mode (no overlay needed); bubble features disable and notifications carry sorting.</li>
+    <li>Access/delete your data inside the app (Folders, History; clearing history; removing folders releases their access grants; link TSV export for portability).</li>
+    <li>EU/UK/CH: UMP consent popup at first use + <em>Ad privacy choices</em> (shown only where Google requires it) to withdraw consent; contact
+      <a href="mailto:vegamanaslabs@gmail.com">vegamanaslabs@gmail.com</a> for access/erasure/objection requests — we respond within statutory timelines.</li>
+  </ul>
+
+  <h2>8. Changes</h2>
+  <p>Material changes will be announced in-app and via this page; the effective date at the top always shows the current version.</p>
+</main>
+<footer>VegaSort · Vega Manas Labs · effective 2026-10-29 · <a href="terms-of-use.html">Terms of Use</a></footer>
+</body>
+</html>
